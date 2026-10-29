@@ -1,0 +1,213 @@
+/* =========================================================
+   style.css — Estilização da página "Mundo dos Gatos"
+   Este arquivo cuida da APARÊNCIA da página:
+   cores, tamanhos, espaçamentos e efeitos visuais.
+   ========================================================= */
+
+
+/* ---------- AJUSTES GERAIS ---------- */
+
+/* Remove as margens e espaçamentos que o navegador coloca por padrão
+   e faz a largura dos elementos já incluir bordas e espaçamento interno. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define a cor de fundo da página (tom creme), a fonte
+   e a cor padrão de todos os textos (marrom escuro). */
+body {
+  background-color: #fdf6ec;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4a3b2f;
+  line-height: 1.6; /* Aumenta o espaço entre as linhas, deixando o texto mais fácil de ler. */
+  transition: background-color 0.4s, color 0.4s; /* Faz a troca de cores do modo noturno ser suave. */
+}
+
+
+/* ---------- CABEÇALHO ---------- */
+
+/* Cabeçalho com fundo laranja, texto centralizado e espaço interno. */
+header {
+  background-color: #e07a2f;
+  text-align: center;
+  padding: 40px 20px;
+  transition: background-color 0.4s;
+}
+
+/* Altera a cor e o tamanho do título principal. */
+h1 {
+  color: #ffffff;
+  font-size: 42px;
+}
+
+/* Subtítulo abaixo do título: cor clara, tamanho menor e espaço embaixo. */
+.subtitulo {
+  color: #ffe8d2;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+
+/* ---------- CONTEÚDO PRINCIPAL ---------- */
+
+/* Limita a largura do conteúdo e centraliza na tela
+   (margin "auto" nas laterais faz a centralização). */
+main {
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+/* Cartões: caixas brancas com cantos arredondados e uma sombra leve. */
+.cartao {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra: deslocamento, desfoque e cor. */
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: background-color 0.4s;
+}
+
+/* Títulos das seções: cor marrom e tamanho maior que o texto. */
+h2 {
+  color: #8a4b1c;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+/* Parágrafos: tamanho do texto e espaço entre um parágrafo e outro. */
+p {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+/* Imagem: ocupa toda a largura do cartão e tem cantos arredondados. */
+img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover; /* Recorta a imagem para caber no espaço sem deformar. */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+
+/* ---------- LISTA ---------- */
+
+/* Espaço à esquerda para as marcações (bolinhas) da lista aparecerem. */
+ul {
+  padding-left: 22px;
+}
+
+/* Cada item da lista: tamanho do texto e espaço entre os itens. */
+li {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+/* Muda a cor da bolinha de cada item da lista para laranja. */
+li::marker {
+  color: #e07a2f;
+}
+
+
+/* ---------- CAIXA DE CURIOSIDADE ---------- */
+
+/* Destaca o parágrafo da curiosidade: fundo laranja bem claro,
+   barra laranja na esquerda e texto em itálico. */
+#curiosidade {
+  background-color: #fff1e3;
+  border-left: 5px solid #e07a2f;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+
+/* ---------- BOTÕES ---------- */
+
+/* Personaliza a aparência dos botões: cor de fundo, cor e tamanho
+   do texto, tira a borda padrão, arredonda os cantos e muda o cursor. */
+button {
+  background-color: #e07a2f;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  cursor: pointer; /* Mostra a "mãozinha" quando o mouse passa por cima. */
+  transition: background-color 0.3s, transform 0.2s; /* Deixa os efeitos de hover suaves. */
+}
+
+/* Quando o mouse passa por cima do botão, a cor escurece
+   e o botão aumenta um pouquinho de tamanho. */
+button:hover {
+  background-color: #c4621b;
+  transform: scale(1.05);
+}
+
+/* Botão do modo noturno: fica branco com texto laranja,
+   para aparecer bem em cima do cabeçalho laranja. */
+.botao-tema {
+  background-color: #ffffff;
+  color: #e07a2f;
+}
+
+.botao-tema:hover {
+  background-color: #ffe8d2;
+}
+
+
+/* ---------- RODAPÉ ---------- */
+
+/* Rodapé com texto centralizado, menor e em cor mais suave. */
+footer {
+  text-align: center;
+  color: #9c8573;
+  padding: 10px 20px 30px;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+
+/* ---------- MODO NOTURNO ----------
+   Estas regras só valem quando o JavaScript adiciona a classe
+   "modo-noturno" na tag <body>. Elas trocam as cores claras por escuras. */
+
+body.modo-noturno {
+  background-color: #1f1a17;
+  color: #eadfd5;
+}
+
+body.modo-noturno header {
+  background-color: #3a2a1f;
+}
+
+body.modo-noturno .cartao {
+  background-color: #2b2420;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.modo-noturno h2 {
+  color: #f0a868;
+}
+
+body.modo-noturno #curiosidade {
+  background-color: #3a2f28;
+}
+
+
+/* ---------- TELAS PEQUENAS (CELULAR) ---------- */
+
+/* Quando a tela tiver até 500px de largura, diminui o título
+   para ele não ficar grande demais no celular. */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 32px;
+  }
+}
